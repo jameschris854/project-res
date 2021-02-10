@@ -4,9 +4,9 @@ const http = require('http')
 const bodyParser = require('body-parser')
 const url = require('url')
 const app = express();
+const path = require('path');
 
-app.use(express.static("public"))
-
+app.use(express.static('public'));
 app.set("view engine", "ejs");
 
 const data = fs.readFileSync('dev-data/data.json', 'utf-8')

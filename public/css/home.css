@@ -71,7 +71,9 @@ margin: 5%;
      overflow: hidden;
      height: 0%;
  }
-
+.fab{
+    margin: 10%;
+}
  .list1>a,.list2>a{
     font-family: 'Montserrat', sans-serif; 
     font-weight: bold;
@@ -83,6 +85,7 @@ margin: 5%;
     text-decoration: none;
     font-size:180%;
     color: black;
+    margin: 5%;
 }
 .fa-instagram:hover{
   color:rgb(226, 43, 113);
@@ -99,13 +102,12 @@ margin: 5%;
 .contact{
     font-weight: bolder;
     font-family: 'Montserrat';
-    margin-top: 10%;
+    margin-top: 3%;
     margin-bottom: 1%;
     color: rgb(255, 50, 50);
 }   
 .navbar-brand{
     font-family: 'Cedarville Cursive', ;
-    font-weight: ;
 }
 footer{
     margin-top: 2rem;
@@ -119,8 +121,11 @@ footer{
 .bg-image{
     position: absolute;
     z-index: -1;
-    height: 500px;
-    width: 1000px;
+    height: 250px;
+    width: 500px;
+    animation-name: pulse;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
 }
 .d-flex {
     flex-direction: row-reverse;
@@ -141,10 +146,47 @@ footer{
 .nav-link{
     color: #fff;
 }
-.navbar-brand{
-    padding-top: 10px;
+
+.navbar-dark .navbar-brand {
     color: rgb(255, 107, 107);
 }
 .bicons{
     width: 5%;
+    margin: 1%;
+}
+
+.text-center.main-title{
+    animation-name: wobble;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes wobble{
+    0%{
+        transform: translateX(-5px);
+        color: cornflowerblue;
+    }
+    50%{
+        transform: translateX(5px);
+        color: lightseagreen;
+    }
+    100%{
+        transform: translateX(-5px);
+        color: rgb(255, 71, 51);
+    }
+}
+
+@keyframes pulse{
+    0%{
+        height: 250px;
+        width: 500px;
+
+    }
+    50%{
+        height: 280px;
+    width: 560px;
+    }
+    100%{
+        height: 250px;
+    width: 500px;
+    }
 }

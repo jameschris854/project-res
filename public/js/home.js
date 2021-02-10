@@ -7,8 +7,10 @@ theme = document.querySelector('.theme')
 body = document.querySelector('body')
 sMedia = document.getElementsByClassName("sm")
 
-const defaultImg = '/images/project.png'
-let currentImg = '/images/bg2.png'
+let defaultImg = '/images/project.png'
+let defaultImgWeb = '/images/webBg.png'
+let defaultImgblend = '/images/blenderImg.png'
+
 //Click event for web-dev projects//
 
 const show = function (sel) {
@@ -34,9 +36,14 @@ webApp.addEventListener('click', () => {
     if ("hide" === document.querySelector('.list1').classList[document.querySelector('.list1').classList.length - 1]) {
         show(apps)
         hide(anim)
-        preview.src = '/images/webBg.png'
+        defaultImg = '/images/webBg.png'
+
+        preview.src = defaultImg
+
     }
     else {
+        defaultImg = '/images/project.png'
+
         hide(apps)
         preview.src = defaultImg
     }
@@ -47,16 +54,36 @@ blender.addEventListener('click', () => {
     if ("hide" == document.querySelector('.list2').classList[document.querySelector('.list2').classList.length - 1]) {
         show(anim)
         hide(apps)
-        preview.src = '/images/blenderImg.png'
+        defaultImg = '/images/blenderImg.png'
 
+        preview.src = defaultImg
     } else {
+        defaultImg = '/images/project.png'
+
         hide(anim)
         preview.src = defaultImg
-
     }
 
 })
 
+console.log(defaultImg)
+webApp.addEventListener('mouseover', () => {
+    preview.src = defaultImgWeb
+
+})
+webApp.addEventListener('mouseout', () => {
+    preview.src = defaultImg
+
+})
+blender.addEventListener('mouseover', () => {
+    preview.src = defaultImgblend
+    console.log(defaultImgblend)
+
+})
+blender.addEventListener('mouseout', () => {
+    preview.src = defaultImg
+
+})
 //click event for theme changer//
 // theme.addEventListener('click', () => {
 //     if (theme.style.color != "white") {
